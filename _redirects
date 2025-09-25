@@ -1,12 +1,4 @@
 # Redirect rules for Cloudflare Pages
 
-# Redirect root to index.html
-/ /index.html 200
-
-# Redirect common paths
-/booking /booking.html 200
-/location /location.html 200
-/privacy /privacy.html 200
-
-# Handle 404s
-/* /index.html 404
+# Handle 404s - redirect to index.html
+/* /index.html 200
