@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mindful Motion • One‑Page</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --mm-brown-900:#3E2F29; --mm-brown-800:#564037; --mm-brown-700:#6A4E42; --mm-brown-400:#9C7E6F;
+      --mm-beige-100:#F5F1E8; --mm-beige-200:#E9E2D7; --mm-beige-300:#D8CBBB; --mm-white:#FFFFFF;
+      --mm-text-on-dark:#F7F6F3; --mm-text-on-light:#2E2A28; --mm-accent:#A68A72;
+      --shadow-s:0 2px 10px rgba(0,0,0,.06); --shadow-m:0 8px 24px rgba(0,0,0,.10); --shadow-l:0 16px 40px rgba(0,0,0,.14);
+      --focus-ring:0 0 0 2px #CDB9A5; --ease:cubic-bezier(.2,.8,.2,1);
+      --container:1200px;
+    }
+    html,body { height:100%; scroll-behavior:smooth; }
+    body { margin:0; font: 400 16px/1.65 "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:var(--mm-text-on-light); background:#fff; }
+    a { color:var(--mm-brown-800); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+
+    /* Layout */
+    .container { max-width:var(--container); margin:0 auto; padding:0 24px; }
+    .grid { display:grid; gap:32px; }
+    @media (min-width:768px){ .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+    /* Typography */
+    .display { font-family:"Playfair Display", serif; font-size:56px; line-height:1.12; font-weight:700; font-style:italic; letter-spacing:-0.01em; }
+    .h1 { font-family:"Playfair Display", serif; font-size:40px; line-height:1.2; font-weight:700; }
+    .h2 { font-family:"Playfair Display", serif; font-size:32px; line-height:1.25; font-weight:600; }
+    .lead { font-size:18px; line-height:1.7; opacity:.92; max-width:70ch; }
+    .caption { font-size:13px; font-weight:600; letter-spacing:.02em; }
+
+    /* Buttons */
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; border-radius:999px; border:0; cursor:pointer; font:600 16px/1 "Open Sans", sans-serif; box-shadow:var(--shadow-s); transition:all .15s var(--ease); }
+    .btn:focus-visible { outline:none; box-shadow:var(--shadow-s), var(--focus-ring); }
+    .btn-primary { background:var(--mm-brown-700); color:var(--mm-text-on-dark); }
+    .btn-primary:hover { filter:brightness(1.06); }
+    .btn-onDark { background:var(--mm-beige-100); color:var(--mm-brown-800); }
+    .btn-onDark:hover { background:var(--mm-beige-200); }
+    .btn-secondary { background:transparent; color:var(--mm-brown-800); border:1px solid var(--mm-brown-400); box-shadow:none; }
+    .btn-secondary:hover { background:var(--mm-beige-200); }
+
+    /* Navbar */
+    .nav { position:fixed; inset:0 0 auto 0; height:72px; display:flex; align-items:center; z-index:50; transition:background .2s var(--ease), box-shadow .2s var(--ease); }
+    .nav--solid { background:rgba(245,241,232,.9); backdrop-filter:saturate(150%) blur(6px); box-shadow:var(--shadow-s); }
+    .nav__inner { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.02em; }
+    .nav__links { display:flex; align-items:center; gap:20px; }
+    .nav__toggle { display:none; background:transparent; border:0; }
+    @media (max-width:840px){
+      .nav__links { display:none; }
+      .nav__toggle { display:inline-flex; }
+      .drawer { position:fixed; top:72px; right:0; left:0; background:#fff; box-shadow:var(--shadow-m); display:none; }
+      .drawer.open { display:block; }
+      .drawer a { display:block; padding:16px 24px; border-bottom:1px solid #eee; }
+    }
+
+    /* Sections */
+    section { padding:88px 0; }
+    .section-dark { background:var(--mm-brown-700); color:var(--mm-text-on-dark); }
+
+    /* Hero */
+    .hero { position:relative; padding:140px 0 110px; color:var(--mm-text-on-dark); }
+    .hero__bg { position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=1960&auto=format&fit=crop') center/cover no-repeat; z-index:-2; }
+    .hero__overlay { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(30,20,16,.55), rgba(30,20,16,.35)); z-index:-1; }
+    .hero .lead { color:var(--mm-text-on-dark); opacity:.95; }
+
+    /* Cards */
+    .card { background:var(--mm-beige-100); border-radius:20px; box-shadow:var(--shadow-m); overflow:hidden; }
+    .card__img { height:280px; background:#ddd center/cover no-repeat; }
+    .card__body { padding:28px; }
+
+    /* Forms */
+    .form-row { display:flex; gap:12px; flex-wrap:wrap; }
+    .input { height:44px; border-radius:14px; border:1px solid var(--mm-beige-300); padding:0 14px; font:400 16px/44px "Open Sans", sans-serif; width:280px; }
+    .input:focus { outline:none; box-shadow:var(--focus-ring); }
+
+    /* Footer */
+    footer { background:var(--mm-brown-900); color:var(--mm-text-on-dark); padding:48px 0; }
+    .footer__grid { display:grid; gap:24px; grid-template-columns:1fr; }
+    @media (min-width:768px){ .footer__grid { grid-template-columns:1.5fr 1fr 1fr; } }
+
+    /* Utilities */
+    .mt-1{margin-top:8px;} .mt-2{margin-top:16px;} .mt-3{margin-top:24px;} .mt-4{margin-top:32px;} .mt-5{margin-top:48px;} .mb-0{margin-bottom:0;}
+    .center { display:flex; align-items:center; justify-content:center; }
+    .pill { background:var(--mm-beige-200); color:var(--mm-brown-800); padding:6px 12px; border-radius:999px; display:inline-flex; align-items:center; gap:8px; }
+    .tag { font-size:13px; font-weight:600; letter-spacing:.02em; }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav id="nav" class="nav">
+    <div class="container nav__inner">
+      <div class="brand">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M7 12c2 0 3-3 5-3s3 3 5 3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        Mindful Motion
+      </div>
+      <div class="nav__links">
+        <a href="#shop">Shop</a>
+        <a href="#deals">Deals</a>
+        <a href="#about">About</a>
+        <a href="#signup" class="btn btn-primary" style="box-shadow:none">Sign Up</a>
+      </div>
+      <button class="nav__toggle" aria-label="Open Menu" onclick="toggleDrawer()">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="drawer" class="drawer">
+      <a href="#shop" onclick="toggleDrawer()">Shop</a>
+      <a href="#deals" onclick="toggleDrawer()">Deals</a>
+      <a href="#about" onclick="toggleDrawer()">About</a>
+      <a href="#signup" onclick="toggleDrawer()">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero section-dark" id="home" role="banner">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="container">
+      <p class="pill tag">Comfort • Balance • Flow</p>
+      <h1 class="display mt-2">Be In The <span style="opacity:.92">Moment</span></h1>
+      <p class="lead mt-2">From our high‑quality mats made of natural materials, to our seamless wearables—our products are designed to keep you comfortable and focused on the task at hand, <em>movement</em>.</p>
+      <div class="mt-3" style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn btn-onDark" href="#shop">See Products</a>
+        <a class="btn btn-secondary" href="#about">Learn More</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIGNUP CTA (Dark band) -->
+  <section id="signup" class="section-dark">
+    <div class="container center" style="flex-direction:column; text-align:center;">
+      <h2 class="h2">Ready To <em style="font-style:italic">Elevate</em> Your Routine?</h2>
+      <p class="lead mt-2">Join our list for early access to drops, restocks, and exclusive class invites.</p>
+      <form class="form-row mt-3" onsubmit="event.preventDefault(); alert('Thanks! You‘re on the list.');">
+        <input class="input" type="email" placeholder="Enter your email" aria-label="Email" required>
+        <button class="btn btn-onDark" type="submit">Sign Me Up</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SHOP SECTIONS -->
+  <section id="shop">
+    <div class="container grid grid-2">
+      <article class="card">
+        <div class="card__img" style="background-image:url('https://images.unsplash.com/photo-1593811167562-a9a8f2c9d9a5?q=80&w=1760&auto=format&fit=crop');"></div>
+        <div class="card__body">
+          <h3 class="h2 mb-0">Workout Sets</h3>
+          <p class="mt-2">Comfortable, chic, and sustainable. Explore our workout sets in a range of colors, shapes, and materials.</p>
+          <a class="btn btn-primary mt-3" href="#">Shop Sets</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__img" style="background-image:url('https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=1760&auto=format&fit=crop');"></div>
+        <div class="card__body">
+          <h3 class="h2 mb-0">Yoga Gear</h3>
+          <p class="mt-2">Mats, blocks, and tools in calming neutrals. Mix and match to build a space you look forward to practicing in.</p>
+          <a class="btn btn-primary mt-3" href="#">Shop Gear</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- DEALS / BANNER -->
+  <section id="deals" class="section-dark">
+    <div class="container grid grid-2" style="align-items:center;">
+      <div>
+        <h2 class="h2">This Week’s Deals</h2>
+        <p class="lead mt-2">Fresh picks every week. Sign up to get early access to limited runs and seasonal favorites.</p>
+        <a class="btn btn-onDark mt-3" href="#signup">Get Early Access</a>
+      </div>
+      <div class="card" style="background:var(--mm-beige-100);">
+        <div class="card__body">
+          <p class="tag">Featured</p>
+          <h3 class="h2 mb-0">Bundle • Mat + Blocks</h3>
+          <p class="mt-2">Save 20% when you bundle your first mat with two support blocks. Limited stock.</p>
+          <a class="btn btn-secondary mt-2" href="#">View Bundle</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container grid grid-2" style="align-items:center;">
+      <div>
+        <h2 class="h2">About Our Brand</h2>
+        <p class="lead mt-2">Mindful Motion was created to offer sustainable, comfortable, and high‑quality movement essentials at an affordable cost—without losing that luxury feeling. We design with care so you can move with ease.</p>
+        <div class="mt-3" style="display:flex; gap:10px; flex-wrap:wrap;">
+          <span class="pill tag">Sustainable</span>
+          <span class="pill tag">Comfort First</span>
+          <span class="pill tag">Neutral Palette</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__img" style="background-image:url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1760&auto=format&fit=crop'); height:360px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer__grid">
+      <div>
+        <div class="brand" style="font-size:18px; margin-bottom:8px;">Mindful Motion</div>
+        <p class="caption" style="opacity:.8; max-width:46ch;">We craft essentials for calm, comfortable movement. Designed with care in neutral, timeless tones.</p>
+      </div>
+      <div>
+        <div class="caption">Shop</div>
+        <ul style="list-style:none; padding:0; margin:8px 0 0; line-height:2;">
+          <li><a href="#shop" style="color:var(--mm-text-on-dark)">Sets</a></li>
+          <li><a href="#shop" style="color:var(--mm-text-on-dark)">Gear</a></li>
+          <li><a href="#deals" style="color:var(--mm-text-on-dark)">Deals</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="caption">Follow</div>
+        <ul style="list-style:none; padding:0; margin:8px 0 0; line-height:2;">
+          <li><a href="#" style="color:var(--mm-text-on-dark)">Instagram</a></li>
+          <li><a href="#" style="color:var(--mm-text-on-dark)">Threads</a></li>
+          <li><a href="#" style="color:var(--mm-text-on-dark)">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top:24px; display:flex; justify-content:space-between; align-items:center; gap:16px;">
+      <p class="caption" style="opacity:.7;">© <span id="year"></span> Mindful Motion. All rights reserved.</p>
+      <a href="#home" class="btn btn-secondary">Back to Top</a>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar solid background on scroll
+    const nav = document.getElementById('nav');
+    const setNav = () => {
+      if (window.scrollY > 8) nav.classList.add('nav--solid');
+      else nav.classList.remove('nav--solid');
+    };
+    window.addEventListener('scroll', setNav); setNav();
+
+    // Mobile drawer
+    function toggleDrawer(){ document.getElementById('drawer').classList.toggle('open'); }
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

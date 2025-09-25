@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mindful Motion • Premium Yoga Studio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'warm-brown': {
+              50: '#fdf8f6',
+              100: '#f2e8e5',
+              200: '#eaddd7',
+              300: '#e0cdc2',
+              400: '#d2bab0',
+              500: '#bfa094',
+              600: '#a18072',
+              700: '#977669',
+              800: '#846358',
+              900: '#43302b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 min-h-screen p-8">
+  <div class="max-w-7xl mx-auto space-y-12">
+    
+    <!-- 1. Hero Class Card -->
+    <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
+      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1920&auto=format&fit=crop" alt="Premium Yoga Class" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+      <div class="absolute inset-0 bg-gradient-to-r from-warm-brown-900/80 to-warm-brown-700/60"></div>
+      <div class="relative z-10 p-12 md:p-16">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center px-4 py-2 rounded-full bg-warm-brown-100/20 backdrop-blur-sm text-warm-brown-100 text-sm font-semibold mb-6 border border-warm-brown-200/30">
+            <span class="w-2 h-2 bg-warm-brown-300 rounded-full mr-3"></span>
+            Premium Experience
+          </div>
+          <h1 class="text-5xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+            Transform Your<br>
+            <span class="text-warm-brown-200 italic">Inner Journey</span>
+          </h1>
+          <p class="text-xl text-warm-brown-100 mb-8 leading-relaxed max-w-2xl">
+            Experience the pinnacle of mindful movement with our signature classes, 
+            guided by world-renowned instructors in our sanctuary of serenity.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button class="bg-warm-brown-600 hover:bg-warm-brown-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl">
+              Book Your Journey
+            </button>
+            <button class="border-2 border-warm-brown-200 text-warm-brown-100 hover:bg-warm-brown-200 hover:text-warm-brown-800 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+              Explore Classes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Instructor Spotlight Card -->
+    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+      <div class="grid md:grid-cols-2 gap-0">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000&auto=format&fit=crop" alt="Master Instructor" class="w-full h-80 md:h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="text-2xl font-bold mb-1">Master Elena</h3>
+            <p class="text-warm-brown-200">Lead Instructor</p>
+          </div>
+        </div>
+        <div class="p-8 md:p-12 flex flex-col justify-center">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-warm-brown-50 text-warm-brown-700 text-sm font-medium mb-4 border border-warm-brown-200">
+            <span class="w-2 h-2 bg-warm-brown-500 rounded-full mr-2"></span>
+            Featured Instructor
+          </div>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">
+            Meet Your<br>
+            <span class="text-warm-brown-600">Guide</span>
+          </h2>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+            With over 15 years of experience in traditional Hatha and modern Vinyasa, 
+            Elena brings wisdom, compassion, and transformative energy to every session.
+          </p>
+          <div class="flex gap-3">
+            <button class="bg-warm-brown-600 hover:bg-warm-brown-700 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-200">
+              View Profile
+            </button>
+            <button class="border-2 border-warm-brown-300 text-warm-brown-700 hover:bg-warm-brown-50 px-6 py-3 rounded-full font-semibold transition-all duration-200">
+              Book Private
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Class Schedule Card -->
+    <div class="bg-gradient-to-br from-warm-brown-50 to-warm-brown-100 rounded-3xl p-8 md:p-12 border border-warm-brown-200">
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-warm-brown-600 text-white text-sm font-semibold mb-4">
+          <span class="w-2 h-2 bg-white rounded-full mr-2"></span>
+          This Week's Schedule
+        </div>
+        <h2 class="text-4xl font-serif font-bold text-gray-900 mb-4">
+          Find Your<br>
+          <span class="text-warm-brown-600">Perfect Flow</span>
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Discover our carefully curated schedule designed to support your journey 
+          at every level, from gentle morning flows to powerful evening practices.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-warm-brown-100">
+          <div class="text-warm-brown-600 font-semibold text-sm mb-2">MONDAY</div>
+          <h3 class="font-bold text-lg mb-2">Morning Flow</h3>
+          <p class="text-gray-600 text-sm mb-3">6:00 AM - 7:00 AM</p>
+          <div class="text-xs text-warm-brown-500">Elena • Level: All</div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-warm-brown-100">
+          <div class="text-warm-brown-600 font-semibold text-sm mb-2">WEDNESDAY</div>
+          <h3 class="font-bold text-lg mb-2">Power Vinyasa</h3>
+          <p class="text-gray-600 text-sm mb-3">7:00 PM - 8:30 PM</p>
+          <div class="text-xs text-warm-brown-500">Marcus • Level: Intermediate</div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-warm-brown-100">
+          <div class="text-warm-brown-600 font-semibold text-sm mb-2">FRIDAY</div>
+          <h3 class="font-bold text-lg mb-2">Restorative</h3>
+          <p class="text-gray-600 text-sm mb-3">6:30 PM - 7:30 PM</p>
+          <div class="text-xs text-warm-brown-500">Sarah • Level: All</div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <button class="bg-warm-brown-600 hover:bg-warm-brown-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg">
+          View Full Schedule
+        </button>
+      </div>
+    </div>
+
+    <!-- 4. Wellness Package Card -->
+    <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
+      <div class="absolute inset-0 bg-gradient-to-br from-warm-brown-800 to-warm-brown-600"></div>
+      <div class="relative z-10 p-8 md:p-12">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <div class="inline-flex items-center px-3 py-1 rounded-full bg-warm-brown-100/20 text-warm-brown-100 text-sm font-medium mb-4 border border-warm-brown-200/30">
+              <span class="w-2 h-2 bg-warm-brown-300 rounded-full mr-2"></span>
+              Exclusive Package
+            </div>
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+              Complete<br>
+              <span class="text-warm-brown-200">Wellness Journey</span>
+            </h2>
+            <p class="text-lg text-warm-brown-100 mb-6 leading-relaxed">
+              Our signature wellness package includes unlimited classes, 
+              personal consultation, and premium amenities for your complete transformation.
+            </p>
+            <div class="flex gap-4">
+              <button class="bg-white text-warm-brown-800 hover:bg-warm-brown-50 px-6 py-3 rounded-full font-semibold transition-colors duration-200">
+                Learn More
+              </button>
+              <button class="border-2 border-warm-brown-200 text-warm-brown-100 hover:bg-warm-brown-200 hover:text-warm-brown-800 px-6 py-3 rounded-full font-semibold transition-all duration-200">
+                Book Consultation
+              </button>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+              <div class="text-2xl font-bold text-white mb-1">∞</div>
+              <div class="text-warm-brown-200 text-sm">Unlimited Classes</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+              <div class="text-2xl font-bold text-white mb-1">1:1</div>
+              <div class="text-warm-brown-200 text-sm">Personal Sessions</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+              <div class="text-2xl font-bold text-white mb-1">✨</div>
+              <div class="text-warm-brown-200 text-sm">Premium Amenities</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+              <div class="text-2xl font-bold text-white mb-1">📱</div>
+              <div class="text-warm-brown-200 text-sm">Mobile App</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Testimonial & CTA Card -->
+    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+      <div class="grid md:grid-cols-2 gap-0">
+        <div class="p-8 md:p-12 flex flex-col justify-center">
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-warm-brown-50 text-warm-brown-700 text-sm font-medium mb-4 border border-warm-brown-200">
+            <span class="w-2 h-2 bg-warm-brown-500 rounded-full mr-2"></span>
+            Member Story
+          </div>
+          <blockquote class="text-2xl font-serif italic text-gray-800 mb-6 leading-relaxed">
+            "This place transformed not just my body, but my entire approach to life. 
+            The instructors are incredible, and the community is like family."
+          </blockquote>
+          <div class="flex items-center mb-8">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=100&auto=format&fit=crop" alt="Sarah" class="w-12 h-12 rounded-full mr-4 object-cover" />
+            <div>
+              <div class="font-semibold text-gray-900">Sarah Chen</div>
+              <div class="text-warm-brown-600 text-sm">Member since 2022</div>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <button class="bg-warm-brown-600 hover:bg-warm-brown-700 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-200">
+              Start Your Journey
+            </button>
+            <button class="border-2 border-warm-brown-300 text-warm-brown-700 hover:bg-warm-brown-50 px-6 py-3 rounded-full font-semibold transition-all duration-200">
+              Read More Stories
+            </button>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop" alt="Yoga Studio" class="w-full h-80 md:h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <div class="text-sm text-warm-brown-200 mb-1">Join 500+ Members</div>
+            <div class="text-lg font-semibold">Find Your Community</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
